@@ -68,108 +68,112 @@ words.forEach((word) => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const sentencas = [
+  const sentencas = [
       ['print', '(', '"', 'Hello World!', '"', ')'],
       ['for', 'i', 'in', 'range', '(', '10', ')', ':'],
       ['if', 'x', '>', 'y', ':'],
       ['def', 'func', '(', ')', ':'],
       ['while', 'True', ':']
-    ];
-  
-    const origin = document.querySelector('.origin');
-    const destino = document.querySelector('.destination');
-    const verificarBtn = document.getElementById('verificarBtn');
-    let isAnimating = false;
-    let selecionados = [];
-  
-    // Função para selecionar uma sentença aleatória
-    function selecionarSentencaAleatoria() {
+  ];
+
+  const origin = document.querySelector('.origin');
+  const destino = document.querySelector('.destination');
+  const verificarBtn = document.getElementById('verificarBtn');
+  let isAnimating = false;
+  let selecionados = [];
+  let sentencaAtual = [];
+
+  // Função para selecionar uma sentença aleatória
+  function selecionarSentencaAleatoria() {
       const randomIndex = Math.floor(Math.random() * sentencas.length);
       return sentencas[randomIndex];
-    }
-  
-    // Função para criar botões com palavras aleatórias
-    function criarBotoesAleatorios(palavras) {
+  }
+
+  // Função para criar botões com palavras aleatórias
+  function criarBotoesAleatorios(palavras) {
       // Limpa os botões existentes antes de criar novos
       origin.innerHTML = '';
-  
+
+      // Armazena a sentença correta
+      sentencaAtual = [...palavras];
+
+      // Embaralha as palavras
+      palavras.sort(() => Math.random() - 0.5);
+
       palavras.forEach(palavra => {
-        const container = document.createElement('div');
-        container.className = 'container';
-  
-        const button = document.createElement('button');
-        button.className = 'word';
-        button.textContent = palavra;
-  
-        container.appendChild(button);
-        origin.appendChild(container);
+          const container = document.createElement('div');
+          container.className = 'container';
+
+          const button = document.createElement('button');
+          button.className = 'word';
+          button.textContent = palavra;
+
+          container.appendChild(button);
+          origin.appendChild(container);
       });
-  
+
       // Reatribui event listeners aos novos botões
       const buttons = document.querySelectorAll('.word');
       buttons.forEach(button => {
-        button.addEventListener('click', () => {
-          if (isAnimating) return;
-  
-          const parent = button.closest(".origin");
-          const primeiraPos = button.getBoundingClientRect();
-  
-          if (parent) {
-            destino.appendChild(button);
-            selecionados.push(button.textContent);
-          } else {
-            origin.appendChild(button);
-            selecionados = selecionados.filter(word => word !== button.textContent);
-          }
-  
-          const ultimaPos = button.getBoundingClientRect();
-          const deltaX = primeiraPos.left - ultimaPos.left;
-          const deltaY = primeiraPos.top - ultimaPos.top;
-  
-          button.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
-          button.style.transition = 'transform 0s';
-  
-          requestAnimationFrame(() => {
-            button.style.transform = '';
-            button.style.transition = 'transform 0.3s ease';
+          button.addEventListener('click', () => {
+              if (isAnimating) return;
+
+              const parent = button.closest(".origin");
+              const primeiraPos = button.getBoundingClientRect();
+
+              if (parent) {
+                  destino.appendChild(button);
+                  selecionados.push(button.textContent);
+              } else {
+                  origin.appendChild(button);
+                  selecionados = selecionados.filter(word => word !== button.textContent);
+              }
+
+              const ultimaPos = button.getBoundingClientRect();
+              const deltaX = primeiraPos.left - ultimaPos.left;
+              const deltaY = primeiraPos.top - ultimaPos.top;
+
+              button.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+              button.style.transition = 'transform 0s';
+
+              requestAnimationFrame(() => {
+                  button.style.transform = '';
+                  button.style.transition = 'transform 0.3s ease';
+              });
+
+              verificarBtn.style.display = selecionados.length === buttons.length ? 'block' : 'none';
           });
-  
-          verificarBtn.style.display = selecionados.length === buttons.length ? 'block' : 'none';
-        });
       });
-    }
-  
-    // Seleciona uma sentença aleatória ao carregar a página
-    const sentencaAtual = selecionarSentencaAleatoria();
-    const novaSentenca = selecionarSentencaAleatoria();
-    criarBotoesAleatorios(sentencaAtual);
-  
-    verificarBtn.addEventListener('click', () => {
+  }
+
+  // Seleciona uma sentença aleatória ao carregar a página
+  const novaSentenca = selecionarSentencaAleatoria();
+  criarBotoesAleatorios(novaSentenca);
+
+  verificarBtn.addEventListener('click', () => {
       let corretas = true;
-  
+
       for (let i = 0; i < sentencaAtual.length; i++) {
-        if (selecionados[i] !== sentencaAtual[i]) {
-          corretas = false;
-          break;
-        }
+          if (selecionados[i] !== sentencaAtual[i]) {
+              corretas = false;
+              break;
+          }
       }
-  
+
       if (corretas) {
-        alert('Parabéns! A ordem está correta.');
-        destino.innerHTML = '';
-        criarBotoesAleatorios(novaSentenca);
-        selecionados = [];
-        verificarBtn.style.display = 'none';
-  
+          alert('Parabéns! A ordem está correta.');
+          destino.innerHTML = '';
+          const novaSentenca = selecionarSentencaAleatoria();
+          criarBotoesAleatorios(novaSentenca);
+          selecionados = [];
+          verificarBtn.style.display = 'none';
+
       } else {
-        alert('Ops! A ordem está incorreta. Tente novamente.');
-        destino.innerHTML = '';
-        criarBotoesAleatorios(sentencaAtual);
-        selecionados = [];
-        verificarBtn.style.display = 'none';
+          alert('Ops! A ordem está incorreta. Tente novamente.');
+          destino.innerHTML = '';
+          criarBotoesAleatorios(sentencaAtual);
+          selecionados = [];
+          verificarBtn.style.display = 'none';
       }
-      
-    });
   });
-  
-  
+});
