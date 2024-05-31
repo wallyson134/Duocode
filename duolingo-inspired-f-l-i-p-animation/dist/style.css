@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap");
+html {
+  display: flex;
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+  min-height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+}
+html * {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 100%;
+  margin: 0;
+  padding: 3rem 1rem;
+  background: #2F4F4F;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+svg {
+  width: 300px;
+}
+.words {
+  display: flex;
+  background: #122023;
+  flex-direction: column;
+  padding: 3rem;
+  border: 1px solid #596265;
+  border-radius: 1rem;
+  width: 400px;
+  height: 600px;
+  max-height:100%;
+  max-width: 100%;
+}
+
+.destination {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  margin: 0 0 6rem;
+  min-height: 100px;
+  background: repeating-linear-gradient(to bottom, transparent 0, transparent 44px, #263032 44px, #263032 45px, transparent 45px, transparent 48px);
+}
+.destination .word {
+  margin: 0 0.125rem 0.5rem;
+}
+
+.origin {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 275px;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  align-items: center; /* Align items vertically center */
+  justify-content: center; /* Optional: Align items horizontally center */
+  gap: 20px; /* Add space between the SVG and words */
+}
+.container:empty {
+  background: #263032;
+}
+
+.word {
+  appearence: none;
+  all: unset;
+  box-sizing: border-box;
+  background: #122023;
+  border: 1px solid #596265;
+  padding: 0.7rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 700;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: inherit;
+}
+.word:active, .word:focus {
+  transition: 0.25s ease;
+  transform: scale(1.05, 1.05) translateY(-0.25rem);
+  background: #1b2f34;
+}
+#verificarBtn {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #2F4F4F;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+#verificarBtn:hover {background-color: #8FBC8F}
+
+#verificarBtn:active {
+  background-color: #8FBC8F;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
