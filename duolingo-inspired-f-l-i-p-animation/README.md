@@ -1,4 +1,6 @@
-# Duolingo Inspired F.L.I.P. Animation
+# Duocode: Uma ferramenta de aprendizado
 
-A Pen created on CodePen.io. Original URL: [https://codepen.io/wallyson134/pen/RwmPrOZ](https://codepen.io/wallyson134/pen/RwmPrOZ).
+Duocode é uma ferramenta baseada na plataforma de aprendizado Duolingo, que se resume a uma plataforma de aprendizado de python
+a partir de tutoriais, e alguns puzzles para a fixação de conteúdo.
 
+Para o seu desenvolvimento, foram utilizadas ferramentas de programação Web, como CSS, HTML Java Script e uso dde bilbiotecas para ajudar no produção, como Bootstrap.
