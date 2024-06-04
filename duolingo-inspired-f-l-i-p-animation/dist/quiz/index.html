@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br" >
+<head>
+  <meta charset="UTF-8">
+  <title>DUOCODE Quiz</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootflat/2.0.4/css/bootflat.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/skins/flat/green.css'><link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="../botao_home.css">
+</head>
+<body>
+
+<!-- partial:index.partial.html -->
+<audio src="https://s3.amazonaws.com/duolingo-data/s3/sounds/wrong_answer.mp3"  preload="auto" hidden="true" id="danger-sound"></audio>
+    <audio src="https://s3.amazonaws.com/duolingo-data/s3/sounds/right_answer.mp3"  preload="auto" hidden="true" id="success-sound"></audio>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/icheck.js'></script><script  src="./script.js"></script>
+<div class="home-button-container">
+  <button id="homeButton" onclick="location.href='../home.html'" aria-label="Voltar para Home">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+      <path d="M3 9L12 2l9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+      <polyline points="9 22 9 12 15 12 15 22"></polyline>
+    </svg>
+  </button>
+</div>
+</body>
+</html>
