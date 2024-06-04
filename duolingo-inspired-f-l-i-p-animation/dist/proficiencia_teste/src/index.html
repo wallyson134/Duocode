@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>DUOCODE</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../../botao_home.css">
+</head>
+<body>
+<div class="container">
+  <h1>Teste de proficiência <span class="subject"></span></h1>
+  <h2>
+    Quantas <span class="detailed-subject"></span>(Palavras Reservadas)
+    você consegue nomear em <span class="time-limit"></span>?
+  </h2>
+  <div class="side">
+    <div class="toast neutral-toast"></div>
+  </div>
+  <div class="main">
+    <button type="button" class="start">Pronto? Clique Aqui para Começar!</button>
+    <div class="started">
+      <input type="text" class="input">
+      <div class="status">
+        <div class="status-timer">
+          Tempo restante: <span class="time-remaining"></span>
+        </div>
+        <div class="status-current-score">
+          Pontuação Atual: <span class="score"></span>
+          de <span class="total"></span>
+        </div>
+        <div class="status-final-results">
+          <span class="end-greeting"></span>
+          você fez <span class="score"></span>
+          de <span class="total"></span>.
+          Resultado: <span class="percent"></span>%!
+        </div>
+        <div class="status-toggle-answers">
+          (<a href="#" class="toggle">Veja o que você deixou passar</a>)
+        </div>
+      </div>
+      <ul class="answers scored-answers"></ul>
+      <ul class="answers missed-answers"></ul>
+      <div class="footnote">
+       
+        <a href="#" class="reset">Jogar De novo</a>?
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="home-button-container">
+  <button id="homeButton" onclick="location.href='../../home.html'" aria-label="Voltar para Home">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+      <path d="M3 9L12 2l9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+      <polyline points="9 22 9 12 15 12 15 22"></polyline>
+    </svg>
+  </button>
+</div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+<script  src="./script.js"></script>
+</body>
+</html>

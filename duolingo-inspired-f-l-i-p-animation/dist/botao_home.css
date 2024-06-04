@@ -1,0 +1,22 @@
+.home-button-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#homeButton {
+  background-color: transparent; /* Cor de fundo do botão */
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+#homeButton svg {
+  width: 50px; /* Largura do ícone */
+  height: 50px; /* Altura do ícone */
+  stroke: #DCDCDC; /* Cor do ícone */
+  transition: stroke 0.3s;
+}
+
+#homeButton:hover svg {
+  stroke:#1C1C1C; /* Cor do ícone ao passar o mouse */
+}

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Tutorial Python</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/agate.min.css'><link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="../../botao_home.css">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+
+
+<div id="root"></div>
+
+<div class="home-button-container">
+  <button id="homeButton" onclick="location.href='../../home.html'" aria-label="Voltar para Home">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+      <path d="M3 9L12 2l9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+      <polyline points="9 22 9 12 15 12 15 22"></polyline>
+    </svg>
+  </button>
+</div>
+
+<script>
+  // This section contains the detail screen metadata
+  const detailScreens = [];
+  detailScreens.push({
+    title: "Introdução ao Python",
+    description: `<p>Python é uma linguagem de programação popular. Foi criado por Guido van Rossum e lançado em 1991..</p>
+      <p>Python é uma linguagem de programação criada por Guido van Rossum e lançada em 1991. É amplamente utilizada em várias áreas, como desenvolvimento web, desenvolvimento de software, matemática e scripting de sistema.</p>
+      <p>Com Python, você pode criar aplicativos web, automatizar fluxos de trabalho, interagir com bancos de dados e manipular grandes conjuntos de dados. Sua sintaxe simples e legível, inspirada na linguagem inglesa, permite aos desenvolvedores escrever código de forma mais concisa.</p>
+      <p>Uma das vantagens do Python é sua portabilidade, funcionando em diferentes plataformas. Além disso, seu sistema interpretador permite uma rápida prototipagem e suporta paradigmas de programação procedural, orientada a objetos e funcional.</p>
+      <p>Em comparação com outras linguagens, Python é conhecido por sua legibilidade e uso de indentação para definir o escopo, em vez de símbolos como ponto e vírgula ou colchetes. Isso torna o código Python mais limpo e fácil de entender.</p>`,
+    sourceCodes: [{
+      type: "Python",
+      content: `print("Hello, World!")`
+    }]
+  });
+  detailScreens.push({
+    title: "Variáveis ​​Python",
+    description: `<p>Variáveis ​​são contêineres para armazenar valores de dados.</p> 
+                  <p>Em Python, não é necessário usar um comando específico para declarar uma variável. Ela é criada automaticamente quando você atribui um valor a ela pela primeira vez. Por exemplo:.</p>
+    `,
+    sourceCodes: [{
+      type: "Python",
+      content: `x = 5
+y = "John"
+print(x)
+print(y)
+`
+    }]
+  });
+  detailScreens.push({
+  title: "Números Inteiros em Python",
+  description: `<p>Os números inteiros em Python são representados por números inteiros, que não possuem parte decimal. Eles podem ser positivos ou negativos.</p>
+
+  <p>Exemplos de números inteiros:</p>
+  <ul>
+    <li>5</li>
+    <li>-10</li>
+    <li>0</li>
+  </ul>
+
+  <p>Operações básicas com números inteiros incluem adição, subtração, multiplicação e divisão. Além disso, Python suporta operações de potência e módulo.</p>`,
+  sourceCodes: [{
+      type: "Python",
+      content: `# Exemplo de código Python representando números inteiros
+a = 5
+b = -10
+c = a + b
+
+print("Soma de a e b:", c)`
+    }
+  ]
+});
+
+detailScreens.push({
+  title: "Strings em Python",
+  description: `<p>Em Python, uma string é uma sequência de caracteres, que podem ser letras, números, símbolos ou espaços. As strings são frequentemente usadas para representar texto.</p>
+
+  <p>Exemplos de strings em Python:</p>
+  <ul>
+    <li>"Olá, mundo!"</li>
+    <li>"Python é incrível!"</li>
+    <li>"12345"</li>
+    <li>"@#%$&"</li>
+  </ul>
+
+  <p>As strings em Python podem ser manipuladas de várias maneiras, como concatenação, fatiamento, formatação e muito mais.</p>`,
+  sourceCodes: [{
+      type: "Python",
+      content: `# Exemplo de código Python representando uma string
+mensagem = "Olá, mundo!"
+print(mensagem)`
+    }
+  ]
+});
+
+  detailScreens.push({
+  title: "Números Float em Python",
+  description: `<p>Em Python, números float são números de ponto flutuante, que podem representar números decimais. Eles podem ser positivos ou negativos e podem incluir uma parte fracionária.</p>
+
+  <p>Exemplos de números float:</p>
+  <ul>
+    <li>3.14</li>
+    <li>-0.5</li>
+    <li>2.71828</li>
+  </ul>
+
+  <p>Operações com números float incluem adição, subtração, multiplicação, divisão e operações matemáticas mais avançadas, como exponenciação e funções trigonométricas.</p>`,
+  sourceCodes: [{
+      type: "Python",
+      content: `# Exemplo de código Python representando números float
+a = 3.14
+b = 2.5
+c = a * b
+
+print("Multiplicação de a e b:", c)`
+    }
+  ]
+});
+
+detailScreens.push({
+  title: "Booleanos em Python",
+  description: `<p>Em Python, um booleano é um tipo de dado que pode ter apenas dois valores: True (verdadeiro) ou False (falso). Os booleanos são comumente usados em expressões lógicas e condicionais para tomar decisões.</p>
+
+  <p>Exemplos de booleanos em Python:</p>
+  <ul>
+    <li>Verdadeiro: True</li>
+    <li>Falso: False</li>
+  </ul>
+
+  <p>Os booleanos são frequentemente usados em estruturas de controle de fluxo, como instruções if, while e for, para controlar o comportamento do programa com base em condições.</p>`,
+  sourceCodes: [{
+    type: "Python",
+    content: `# Exemplo de código Python usando booleanos
+verdadeiro = True
+falso = False
+
+if verdadeiro:
+    print("Esta condição é verdadeira!")
+    
+if not falso:
+    print("Esta condição também é verdadeira!")`
+  }]
+});
+
+detailScreens.push({
+  title: "Operadores em Python",
+  description: `<p>Em Python, os operadores são símbolos especiais que realizam operações em valores e variáveis. Existem diferentes tipos de operadores em Python, como operadores aritméticos, operadores de atribuição, operadores de comparação, operadores lógicos, operadores de identidade e operadores de associação.</p>
+
+  <p>Exemplos de operadores em Python:</p>
+  <ul>
+    <li>Operadores Aritméticos: +, -, *, /</li>
+    <li>Operadores de Atribuição: =, +=, -=, *=, /=</li>
+    <li>Operadores de Comparação: ==, !=, <, >, <=, >=</li>
+    <li>Operadores Lógicos: and, or, not</li>
+    <li>Operadores de Identidade: is, is not</li>
+    <li>Operadores de Associação: in, not in</li>
+  </ul>
+
+  <p>Os operadores são amplamente utilizados em expressões e instruções Python para realizar diferentes tipos de operações, como cálculos matemáticos, atribuições de valores, comparações de valores, e muito mais.</p>`,
+  sourceCodes: [{
+    type: "Python",
+    content: `# Exemplo de código Python usando operadores
+a = 10
+b = 5
+
+# Operadores Aritméticos
+soma = a + b
+subtracao = a - b
+multiplicacao = a * b
+divisao = a / b
+
+# Operadores de Comparação
+igual = (a == b)
+diferente = (a != b)
+maior = (a > b)
+menor = (a < b)
+
+# Operadores Lógicos
+e_logico = (a > 0 and b > 0)
+ou_logico = (a > 0 or b < 0)
+negacao = not (a > b)
+
+print("Soma:", soma)
+print("Subtração:", subtracao)
+print("Multiplicação:", multiplicacao)
+print("Divisão:", divisao)
+print("Igual:", igual)
+print("Diferente:", diferente)
+print("Maior:", maior)
+print("Menor:", menor)
+print("E Lógico:", e_logico)
+print("Ou Lógico:", ou_logico)
+print("Negação:", negacao)`
+  }]
+});
+
+detailScreens.push({
+  title: "Lista em Python",
+  description: `Uma lista é uma estrutura de dados em Python que pode armazenar uma coleção ordenada de elementos. Os elementos em uma lista podem ser de diferentes tipos, como números, strings, booleanos e até outras listas. As listas em Python são mutáveis, o que significa que você pode adicionar, remover e modificar elementos.`,
+  sourceCodes: [{
+    type: "Python",
+    content: `# Exemplo de uma lista em Python
+lista = [10, 20, 30, 40, 50]
+
+# Acessando elementos da lista
+primeiro_elemento = lista[0]
+ultimo_elemento = lista[-1]
+sublista = lista[1:4]
+
+# Adicionando elementos à lista
+lista.append(60)
+lista.insert(2, 25)
+
+# Removendo elementos da lista
+lista.remove(40)
+elemento_removido = lista.pop(3)
+
+# Modificando elementos da lista
+lista[1] = 22
+
+print("Lista completa:", lista)
+print("Primeiro elemento:", primeiro_elemento)
+print("Último elemento:", ultimo_elemento)
+print("Sublista:", sublista)
+print("Elemento removido:", elemento_removido)
+`
+  }]
+});
+
+detailScreens.push({
+  title: "Tuplas em Python",
+  description: `Uma tupla em Python é uma estrutura de dados semelhante a uma lista, mas imutável, o que significa que uma vez que uma tupla é criada, seus elementos não podem ser modificados, adicionados ou removidos. Tuplas são frequentemente usadas para armazenar coleções de elementos relacionados que não devem ser alterados, como coordenadas (x, y) ou informações sobre uma data (ano, mês, dia).`,
+  sourceCodes: [{
+    type: "Python",
+    content: `# Exemplo de uma tupla em Python
+tupla = (10, 20, 30, 40, 50)
+
+# Acessando elementos da tupla
+primeiro_elemento = tupla[0]
+ultimo_elemento = tupla[-1]
+subtupla = tupla[1:4]
+
+print("Tupla completa:", tupla)
+print("Primeiro elemento:", primeiro_elemento)
+print("Último elemento:", ultimo_elemento)
+print("Subtupla:", subtupla)
+`
+  }]
+});
+
+detailScreens.push({
+  title: "Conjuntos em Python",
+  description: `Em Python, um conjunto (set) é uma coleção não ordenada de elementos únicos. Isso significa que um conjunto não pode conter elementos duplicados. Os conjuntos em Python são implementados usando uma estrutura de dados de tabela de hash, o que os torna eficientes para operações de pertencimento, união, interseção e diferença.`,
+  sourceCodes: [{
+    type: "Python",
+    content: `# Exemplo de conjunto em Python
+conjunto1 = {1, 2, 3, 4, 5}
+conjunto2 = {4, 5, 6, 7, 8}
+
+# Operações de conjunto
+uniao = conjunto1 | conjunto2
+intersecao = conjunto1 & conjunto2
+diferenca = conjunto1 - conjunto2
+
+print("Conjunto 1:", conjunto1)
+print("Conjunto 2:", conjunto2)
+print("União:", uniao)
+print("Interseção:", intersecao)
+print("Diferença:", diferenca)
+`
+  }]
+});
+
+detailScreens.push({
+  title: "Dicionários em Python",
+  description: `Em Python, um dicionário é uma estrutura de dados que mapeia chaves a valores. Cada chave em um dicionário deve ser única. Os dicionários são uma maneira flexível e poderosa de armazenar e manipular dados em Python, pois permitem acesso rápido aos valores associados às chaves.`,
+  sourceCodes: [{
+    type: "Python",
+    content: `# Exemplo de dicionário em Python
+dicionario = {
+    "nome": "João",
+    "idade": 30,
+    "cidade": "São Paulo"
+}
+
+# Acessando valores do dicionário
+print("Nome:", dicionario["nome"])
+print("Idade:", dicionario["idade"])
+print("Cidade:", dicionario["cidade"])
+`
+  }]
+});
+
+detailScreens.push({
+  title: "Estruturas Condicionais em Python",
+  description: `As estruturas de controle condicionais em Python, como o "if", permitem que você execute diferentes blocos de código com base em condições específicas. O bloco de código dentro do "if" é executado se a condição for avaliada como verdadeira (True); caso contrário, o bloco de código dentro do "else", se presente, é executado.`,
+  sourceCodes: [{
+    type: "Python",
+    content: `# Exemplo de estrutura condicional em Python
+numero = 10
+
+# Verifica se o número é positivo
+if numero > 0:
+    print("O número é positivo.")
+else:
+    print("O número não é positivo.")
+`
+  }]
+});
+
+detailScreens.push({
+  title: "Loops While em Python",
+  description: `Os loops "while" em Python permitem que você execute um bloco de código repetidamente enquanto uma condição específica for verdadeira. O bloco de código é executado repetidamente até que a condição se torne falsa.`,
+  sourceCodes: [{
+    type: "Python",
+    content: `# Exemplo de loop while em Python
+numero = 0
+
+# Imprime os números de 0 a 4 usando um loop while
+while numero < 5:
+    print(numero)
+    numero += 1
+`
+  }]
+});
+
+detailScreens.push({
+  title: "Loops For em Python",
+  description: `Os loops "for" em Python permitem que você execute um bloco de código várias vezes, com base em uma sequência de elementos. Você pode iterar sobre uma lista, uma tupla, um dicionário, um conjunto ou qualquer outro objeto iterável em Python.`,
+  sourceCodes: [{
+    type: "Python",
+    content: `# Exemplo de loop for em Python
+frutas = ["maçã", "banana", "laranja"]
+
+# Itera sobre cada elemento da lista e imprime
+for fruta in frutas:
+    print(fruta)
+    
+# Exemplo de uso do loop for com range
+for i in range(5):
+    print(i)
+`
+  }]
+});
+
+detailScreens.push({
+  title: "Funções em Python",
+  description: `As informações podem ser passadas para funções como argumentos.
+
+Os argumentos são especificados após o nome da função, entre parênteses. Você pode adicionar quantos argumentos quiser, basta separá-los com vírgula.
+
+O exemplo a seguir possui uma função com um argumento (fname). Quando a função é chamada, passamos um primeiro nome, que é usado dentro da função para imprimir o nome completo:
+
+Exemplo`,
+  sourceCodes: [{
+    type: "Python",
+    content: `# Exemplo de definição de função em Python
+def saudacao(nome):
+    return "Olá, " + nome + "!"
+
+# Chamando a função e imprimindo o resultado
+print(saudacao("Mundo"))
+`
+  }]
+});
+
+detailScreens.push({
+  title: "Vázio",
+  description: "<p>Clique aqui para adicionar detalhes.</p>",
+  sourceCodes: []
+});
+
+detailScreens.push({
+  title: "Vázio",
+  description: "<p>Clique aqui para adicionar detalhes.</p>",
+  sourceCodes: []
+});
+
+detailScreens.push({
+  title: "Vázio",
+  description: "<p>Clique aqui para adicionar detalhes.</p>",
+  sourceCodes: []
+});
+
+detailScreens.push({
+  title: "Vázio",
+  description: "<p>Clique aqui para adicionar detalhes.</p>",
+  sourceCodes: []
+});
+
+detailScreens.push({
+  title: "Vázio",
+  description: "<p>Clique aqui para adicionar detalhes.</p>",
+  sourceCodes: []
+});
+
+detailScreens.push({
+  title: "Vázio",
+  description: "<p>Clique aqui para adicionar detalhes.</p>",
+  sourceCodes: []
+});
+
+detailScreens.push({
+  title: "Vázio",
+  description: "<p>Clique aqui para adicionar detalhes.</p>",
+  sourceCodes: []
+});
+
+detailScreens.push({
+  title: "Vázio",
+  description: "<p>Clique aqui para adicionar detalhes.</p>",
+  sourceCodes: []
+});
+
+detailScreens.push({
+  title: "Vázio",
+  description: "<p>Clique aqui para adicionar detalhes.</p>",
+  sourceCodes: []
+});
+
+detailScreens.push({
+  title: "Vázio",
+  description: "<p>Clique aqui para adicionar detalhes.</p>",
+  sourceCodes: []
+});
+
+
+
+</script>
+<!-- partial -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/highlight.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/react/17.0.1/umd/react.production.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.1/umd/react-dom.production.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
